@@ -11,7 +11,7 @@ import { AuthFirebaseService } from 'src/app/service/auth-firebase.service';
   templateUrl: './float-menu.component.html',
   styleUrls: ['./float-menu.component.scss'],
 })
-export class FloatMenuComponent  implements OnInit, OnDestroy {
+export class FloatMenuComponent  implements OnInit {
   titleMenu: string='home';
 
   public isLoged : any = false;
@@ -54,12 +54,13 @@ export class FloatMenuComponent  implements OnInit, OnDestroy {
     this.titleMenu =titleMenu;
     this.router.navigate([link]);
   }
-
+/** 
   ngOnDestroy(): void {
     if(this.subscription != null || this.subscription!= undefined){
       this.subscription.unsubscribe();
     }
   }
+  */
 
   onMenuOpen(){
     onAuthStateChanged(this.autService.getStateAuth(), user=>{
